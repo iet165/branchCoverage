@@ -20,5 +20,26 @@ public class TestUtil {
           fail("Eğer runtime yemezse test faillanmali");
       } catch (RuntimeException exception) {}
   }
-   
+    @Test
+    public void testTekSayidaArgümanKSumKati() {
+        assertTrue("Tek sayida argümanlar verilince toplami ve toplamları argümanların katı ise true dönmeli", c.compute(2, 5, 10, 11, -28));
+  }
+
+    @Test
+     public void testTekSayidaArgümanKSumKatiDeğil() {
+        assertFalse("Tek sayida argümanlar verilince toplami ve toplamları argümanların katı değilse false dönmeli", c.compute(5, 7, 17));
+    }
+
+
+    @Test
+    public void testBirdenFazlaSifir() {
+        try {
+            c.compute(0, 0, 0);
+            fail("Eğer runtime yemezse test faillanmali");
+        } catch (RuntimeException e) {}
+    }
+    @Test
+    public void testBirArgüman() {
+        assertFalse("Tek bir argüman verilince false dönmeli", c.compute(1));
+    }
 }

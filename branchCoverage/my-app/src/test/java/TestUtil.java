@@ -42,4 +42,9 @@ public class TestUtil {
     public void testBirArgüman() {
         assertFalse("Tek bir argüman verilince false dönmeli", c.compute(1));
     }
+
+    @Test
+    public void testÇiftTaneArgüman() {
+        assertFalse("Çift sayida argüman verilirse false dönmeli", c.compute(1, 2));
+    }
 }

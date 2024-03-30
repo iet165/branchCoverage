@@ -6,11 +6,19 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class TestUtil {
-  Util c;
+    private Util c;
 
-  @Before
-  public void setUp() { c = new Util(); }
+    @Before
+    public void setUp() {
+        c = new Util();
+    }
 
-  @Test
-  public void example() { assertTrue(true); }
+    @Test
+    public void testSifir() {
+      try {
+          c.compute(1, 2, 0);
+          fail("Eğer runtime yemezse test faillanmali");
+      } catch (RuntimeException exception) {}
+  }
+   
 }
